@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradeWise - Marks Analysis</title>
+    <!-- <link rel="stylesheet" href="C:\Users\Ayan Nadaf\Desktop\Projects\GradeWise\templates\css\style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- {{ url_for('static', filename='css/style.css') }} -->
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to GradeWise</h1>
+        <p>Upload your marks PDF file to get a detailed analysis.</p>
+        
+        <form action="/analyze" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Analyze Marks</button>
+        </form>
+    </div>
+</body>
+</html>

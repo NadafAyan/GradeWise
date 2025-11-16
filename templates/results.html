@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradeWise - Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Results</h1>
+        <div class="results-container">
+            <div class="result-card">
+                <h3>Toppers</h3>
+                <ul>
+                    {% for topper in toppers %}
+                    <li>{{ topper.name }} - {{ topper.total }} marks</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="result-card">
+                <h3>Low Scorers (0 Marks)</h3>
+                <ul>
+                    {% for student in low_scorers %}
+                    <li>{{ student.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <p><a href="/">Go back to upload another file</a></p>
+    </div>
+</body>
+</html>
